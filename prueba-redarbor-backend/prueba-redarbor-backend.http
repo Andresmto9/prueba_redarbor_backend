@@ -1,0 +1,6 @@
+@prueba_redarbor_backend_HostAddress = http://localhost:5115
+
+GET {{prueba_redarbor_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

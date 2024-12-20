@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prueba-redarbor-backend", "prueba-redarbor-backend\prueba-redarbor-backend.csproj", "{33E49A33-F3CB-4F9A-92AA-F0DF6BA5FD11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33E49A33-F3CB-4F9A-92AA-F0DF6BA5FD11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E49A33-F3CB-4F9A-92AA-F0DF6BA5FD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E49A33-F3CB-4F9A-92AA-F0DF6BA5FD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E49A33-F3CB-4F9A-92AA-F0DF6BA5FD11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBA1E1FA-4E6F-46ED-AA4B-A893A7D0E129}
+	EndGlobalSection
+EndGlobal
