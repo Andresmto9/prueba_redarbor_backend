@@ -52,6 +52,14 @@ namespace prueba_redarbor_backend.Controllers
                 return BadRequest();
             }
 
+            var count = await _context.Usuarios
+                .CountAsync(u => u.Id != usuariosModel.Id && u.Email == usuariosModel.Email);
+
+            if (count > 0)
+            {
+                return Conflict(new { mensaje = "El correo electrónico ya está registrado." });
+            }
+
             _context.Entry(usuariosModel).State = EntityState.Modified;
 
             try
@@ -78,6 +86,14 @@ namespace prueba_redarbor_backend.Controllers
         [HttpPost]
         public async Task<ActionResult<UsuariosModel>> PostUsuariosModel([FromBody] UsuariosModel usuariosModel)
         {
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == usuariosModel.Email);
+
+            if (usuario != null)
+            {
+                return Conflict(new { mensaje = "El correo electrónico ya está registrado." });
+            }
+
             _context.Usuarios.Add(usuariosModel);
             await _context.SaveChangesAsync();
 
@@ -122,6 +138,20 @@ namespace prueba_redarbor_backend.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(usuariosModel);
+        }
+
+        [HttpGet("buscarPorEmail/{email}")]
+        public async Task<IActionResult> GetUsuarioPorEmail(string email)
+        {
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == email);
+
+            if (usuario == null)
+            {
+                return NotFound(new { mensaje = "Usuario no encontrado con el correo proporcionado." });
+            }
+
+            return Ok(usuario);
         }
 
         private bool UsuariosModelExists(int id)
